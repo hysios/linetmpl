@@ -1,0 +1,163 @@
+
+.flex-inline {
+    display: flex;
+    padding: .25em .25em;
+    border: 1px solid #ccc;
+    cursor: text;
+    /* flex-direction: column; */
+    flex-flow: row nowrap;
+  }
+  
+  .flex-node {
+    display: inline-flex;
+    flex: 1;
+    margin-right: 0.25em;
+  }
+
+  .flex-node .node-box {
+    position: relative;
+    display: flex;
+  }
+  
+  .flex-text {
+    display: inline-flex;
+    flex: 1;
+    margin-right: 0.25em;
+  }
+  
+  .flex-text input {
+    text-align: center;
+    /* height: 2em; */
+    width: auto;
+    display: inline-block;
+    color: #222;
+    background-color: rgb(230, 230, 230);
+    border: 0px;
+    appearance: none;
+    outline: none;
+    line-height: 1.5em;
+  }
+  
+  .flex-node input {
+    padding: 0.25em 2em 0.25em 0.5em;
+    color: #222;
+    background-color: #cee7f9;
+    min-width: 1em;
+    border-radius: 4px;
+    /* height: 2em; */
+    border: 0px;
+    appearance: none;
+    outline: none;
+    line-height: 1.5em;
+  }
+
+  
+  .node-box  select {
+    padding: 0.25em 2.5em 0.25em 2.25em;
+    /* margin-right: 0.5em; */
+    color: #222;
+    background-color: #cee7f9;
+    min-width: 1em;
+    border-radius: 4px;
+    /* height: 2em; */
+    border: 0px;
+    appearance: none;
+    outline: none;
+    line-height: 1.5em;
+  }
+
+  .node-btn {
+    background-color: #cee7f9;
+    border: 1px solid  #cee7f9;
+    margin-right: 10px;
+  }
+
+  .flex-node .node-close {
+    font-family: Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 0.25em;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    line-height: 0.8;
+    font-size: 0.75em;
+    z-index: 2;
+  }
+
+  .btn-arrow-right,
+  .btn-arrow-left {
+      position: relative;
+      padding-left: 16px;
+      padding-right: 16px;
+  }
+  .btn-arrow-right {
+      padding-left: 16px;
+  }
+  .btn-arrow-left {
+      padding-right: 16px;
+  }
+  .btn-arrow-right:before,
+  .btn-arrow-right:after,
+  .btn-arrow-left:before,
+    .btn-arrow-left:after { /* make two squares (before and after), looking similar to the button */
+        content:"";
+        position: absolute;
+        top: 4px; /* move it down because of rounded corners */
+        width: 20px; /* same as height */
+        height: 20px; /* button_outer_height / sqrt(2) */
+        background: inherit; /* use parent background */
+        border: inherit; /* use parent border */
+        border-left-color: transparent; /* hide left border */
+        border-bottom-color: transparent; /* hide bottom border */
+        border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+        -webkit-border-radius: 0px 4px 0px 0px;
+        -moz-border-radius: 0px 4px 0px 0px;
+  }
+  .btn-arrow-right:before,
+  .btn-arrow-right:after {
+      transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+  }
+  .btn-arrow-left:before,
+  .btn-arrow-left:after {
+      transform: rotate(225deg); /* rotate left arrow squares 225 deg to point left */
+      -webkit-transform: rotate(225deg);
+      -moz-transform: rotate(225deg);
+      -o-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+  }
+  .btn-arrow-right:before,
+  .btn-arrow-left:before { /* align the "before" square to the left */
+      left: -10px;
+  }
+  .btn-arrow-right:after,
+  .btn-arrow-left:after { /* align the "after" square to the right */
+      right: -10px;
+  }
+  .btn-arrow-right:after,
+  .btn-arrow-left:before { /* bring arrow pointers to front */
+      z-index: 1;
+  }
+  .btn-arrow-right:before,
+  .btn-arrow-left:after { /* hide arrow tails background */
+      background-color: white;
+  }
+
+  .inline-editor {
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .inline-editor:active {
+    border: 1px solid #282c34;
+  
+  }
