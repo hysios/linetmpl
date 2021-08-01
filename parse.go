@@ -1,6 +1,9 @@
 package linetmpl
 
-import "text/template/parse"
+import (
+	"html/template"
+	"text/template/parse"
+)
 
 const (
 	LeftDelim  = "["
@@ -21,4 +24,17 @@ func Parse(name, text string) (*Tree, error) {
 	} else {
 		return tree, nil
 	}
+}
+
+func Compile(name, text string) (*template.Template, error) {
+	ast, err := parse.Parse(name, text, LeftDelim, RightDelim, Funcs)
+	if err != nil {
+		return nil, err
+	}
+
+	var tmpl = template.New(name).Funcs(Funcs)
+
+	tmpl.AddParseTree(name, ast[name])
+	// tmpl.Tree = ast[name]
+	return tmpl, nil
 }
